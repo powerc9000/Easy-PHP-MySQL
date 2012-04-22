@@ -6,23 +6,26 @@ Easy-PHP-MySQL simplifies and shortens the process of connecting and querying on
 <span style="font-size: 16px; font-weight: bold;">Usage:</span>
 
 1) Place db_connect.php on your server.
-<br /><br />2) Edit db_connect.php configurations by adding your database credentials.  You may add as many or as few databases as you would like.  The naming convention (not required) is "db1", "db2", "db3", etc...
-<br /><br />3) Done with configuration!
-<br /><br />4) Include db_connect.php in any file you wish to have database communication with. (For help including, view "example.php"
-<br /><br />5) Create a connection: '$users = new Connection();' (choose a variable that reflects what you are doing, I used "$users").
-<br /><br />6) Choose your database and create a statement: '$users = $users->query("db1","SELECT * FROM `users`");' (IMPORTANT: Use the same name for both variables)
-<br /><br />7) Done!  Now you can do as you wish with your query using your variable (mine: $users)
+<br /><br />2) Include db_connect.php in any file you wish to have database communication with. (For help including, view "example.php"
+<br /><br />3) Create a connection with connection details: '$users = new Connection("host","user","password","database");' (choose a variable that reflects what you are doing, I used "$users").
+<br /><br />6) Choose your database and create a statement: '$users = $users->query("SELECT * FROM `users`");' (IMPORTANT: Use the same name for both variables)
+<br /><br />7) Now you can get the data from your query using `$users->fetch()`;
 
 Example:
 
 Create a new connection
-`$users = new Connection();`
+`$users = new Connection("host","user","password","database");`
 
 Create a query (View documentation for an example).
-`$users = $users->query("db1","SELECT * FROM users");`
+`$users = $users->query("SELECT * FROM users");`
 
-Do what ever you want with the query's result.
-`echo mysql_num_rows($users); (You can do anything with $users!)`
+Get the data from the query.
+`$data = $db1->fetch();`
+Fetch will return data as an  array with row names ie. `$data[0]['row_name'];`
+This way the data is easy to loop through
+`foreach($data as $d){`
+`  echo $d['row_name'];`
+`}`
 
 
 
