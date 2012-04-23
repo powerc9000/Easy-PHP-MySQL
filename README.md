@@ -20,7 +20,6 @@ Coming Soon:
 * Better/more examples
 * More shortcode functions
 * More ways to connect to your database
->>>>>>> ca5bd40529d1fcd8be2f7504aadcf146df4bf4b6
 
 Usage:
 ------
