@@ -13,7 +13,7 @@ $selectusers = $get->query("SELECT * FROM users");
 echo mysql_num_rows($selectusers);
 
 //Use built in functions to make one line queries.
-echo  $get->fetch();  //fetch() fetches the associated rows.  More quick functions coming soon.
+var_dump($get->fetch());  //fetch() fetches the associated rows.  More quick functions coming soon.
 
 
 
